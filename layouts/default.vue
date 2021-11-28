@@ -1,6 +1,6 @@
 <template>
   <div>
-    <Navigation/>
+    <Navigation />
     <main class="content">
       <Nuxt keep-alive />
     </main>
@@ -13,18 +13,17 @@ export default {
     return {
       meta: [
         {
-          hid: 'description',
-          name: 'description',
-          content: 'DigitalStudioKora',
+          hid: "description",
+          name: "description",
+          content: "DigitalStudioKora",
         },
         {
-          hid: 'keywords',
-          name: 'keywords',
-          content: 'digital, studio, nuxt, vue, js, css, slide, carousel',
+          hid: "keywords",
+          name: "keywords",
+          content: "digital, studio, nuxt, vue, js, css, slide, carousel",
         },
       ],
-    }
+    };
   },
-}
+};
 </script>
-

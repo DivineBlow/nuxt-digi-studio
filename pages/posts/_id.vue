@@ -1,47 +1,46 @@
 <template>
-
-    <!-- Loading -->
+  <!-- Loading -->
   <Loading v-if="$fetchState.pending" />
   <p v-else-if="$fetchState.error">Что-то пошло не так...</p>
   <article v-else class="project__id">
-    <button class="button__id" @click="goBack"><span>Главная</span> {{ posts.id }}</button>
+    <button class="button__id" @click="goBack">
+      <span>Главная</span> {{ posts.id }}
+    </button>
     <h1 class="title__id">{{ posts.title }}</h1>
     <section>
       <p class="body__id">{{ posts.body }}</p>
     </section>
     <img class="project__img" src="~/assets/img/post_img.png" />
   </article>
-
 </template>
 
 <script>
 export default {
-  name: 'posts_id',
-  head () {
+  name: "posts_id",
+  head() {
     return {
-      id: this.posts.id
-    }
+      id: this.posts.id,
+    };
   },
   data() {
     return {
-      posts: {}
-    }
+      posts: {},
+    };
   },
   async fetch() {
     this.posts = await this.$http.$get(
       `https://jsonplaceholder.typicode.com/posts/${this.$route.params.id}`
-    )
+    );
   },
   methods: {
     goBack() {
-      return this.$router.go(-1)
-    }
-  }
-}
+      return this.$router.go(-1);
+    },
+  },
+};
 </script>
 
 <style lang="scss" scoped>
-
 :root {
   font-size: 16px;
 }
@@ -130,17 +129,14 @@ export default {
     }
 
     .body__id {
-      font-size: .8rem;
+      font-size: 0.8rem;
       padding: 10px;
     }
 
     .project__img {
       padding: 25px;
       margin: 0 auto;
-
     }
   }
 }
-
-
 </style>

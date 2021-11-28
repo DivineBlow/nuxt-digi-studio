@@ -1,4 +1,5 @@
-# StudioKora
+# Digital-Studio
+
 Nuxt app with slider made by DivineBlow.
 
 ## Build Setup
@@ -17,6 +18,7 @@ $ npm run start
 # generate static project
 $ npm run generate
 ```
+
 ## Misc
 
 Follow me: [CodePen](https://codepen.io/DivineBlow), [Vkontakte](https://vk.com/jesus.the.lord) , [GitHub](https://github.com/DivineBlow)

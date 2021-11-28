@@ -18,36 +18,36 @@
       </div>
     </div>
     <!-- Contact -->
-    <Contact/>
-
+    <Contact />
   </div>
 </template>
 
 <script>
 export default {
   head: {
-    title: 'Главная'
+    title: "Главная",
   },
   data() {
     return {
-      posts: []
-    }
+      posts: [],
+    };
   },
 
   activated() {
     if (this.$fetchState.timestamp <= Date.now() - 30000) {
-      this.$fetch()
+      this.$fetch();
     }
   },
 
   async fetch() {
-    this.posts = await this.$http.$get('https://jsonplaceholder.typicode.com/posts')
-  }
-}
+    this.posts = await this.$http.$get(
+      "https://jsonplaceholder.typicode.com/posts"
+    );
+  },
+};
 </script>
 
 <style lang="scss" scoped>
-
 :root {
   font-size: 16px;
 }
@@ -57,12 +57,12 @@ export default {
   z-index: 100;
 
   .menu__nav a {
-    color: #CCCBC6;
+    color: #cccbc6;
   }
 }
 
 .bg__img {
-  background-image: url('~/assets/img/bg-img.png');
+  background-image: url("~/assets/img/bg-img.png");
   width: 100%;
   min-height: 870px;
   background-position: center;
@@ -80,12 +80,15 @@ export default {
     flex-direction: column;
     justify-content: center;
 
-    h1,h2,h3 {
+    h1,
+    h2,
+    h3 {
       text-transform: uppercase;
     }
 
-    h1,h2 {
-      color: #DBD8D1;
+    h1,
+    h2 {
+      color: #dbd8d1;
       font-style: normal;
       font-weight: 600;
       font-size: clamp(3rem, 3rem, 2.5rem);
@@ -117,38 +120,37 @@ export default {
       line-height: 23px;
       letter-spacing: 4px;
     }
-
   }
 }
-  .project__container {
-    width: 100%;
-    height: 100%;
-    max-height: 1500px;
-    position: absolute;
-    margin-top: 850px;
+.project__container {
+  width: 100%;
+  height: 100%;
+  max-height: 1500px;
+  position: absolute;
+  margin-top: 850px;
 
-    h1 {
-      margin-top: 100px;
-      text-transform: uppercase;
-      font-size: 3rem;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      flex-wrap: wrap;
+  h1 {
+    margin-top: 100px;
+    text-transform: uppercase;
+    font-size: 3rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    flex-wrap: wrap;
 
-      &::after {
-        content: "";
-        background: rgba(215, 174, 122, 0.58);
-        width: 120px;
-        height: 3px;
-      }
+    &::after {
+      content: "";
+      background: rgba(215, 174, 122, 0.58);
+      width: 120px;
+      height: 3px;
     }
   }
+}
 
 @media screen and (min-width: 320px) and (max-width: 767.99px) {
-  .header h1, h2 {
+  .header h1,
+  h2 {
     font-size: 5vw !important;
   }
 }
 </style>
-

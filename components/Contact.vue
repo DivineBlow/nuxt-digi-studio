@@ -1,30 +1,46 @@
 <template>
   <div>
-
     <form class="vue-form" @submit.prevent="submit">
       <h6>Контакты</h6>
       <fieldset>
-        <legend class="form__legend">Оставьте заявку и мы вам перезвоним!</legend>
+        <legend class="form__legend">
+          Оставьте заявку и мы вам перезвоним!
+        </legend>
         <div class="box__field">
           <div class="form__input">
-            <img src="~/assets/img/person.svg" alt="PersonSVG">
-            <input type="text" name="name" id="name" required="" placeholder="Ваше имя">
+            <img src="~/assets/img/person.svg" alt="PersonSVG" />
+            <input
+              type="text"
+              name="name"
+              id="name"
+              required=""
+              placeholder="Ваше имя"
+            />
           </div>
           <div class="form__input">
-            <img src="~/assets/img/phone.svg" alt="PhoneSVG">
-            <input type="number" name="number" id="number" required="" placeholder="Телефон">
+            <img src="~/assets/img/phone.svg" alt="PhoneSVG" />
+            <input
+              type="number"
+              name="number"
+              id="number"
+              required=""
+              placeholder="Телефон"
+            />
           </div>
         </div>
         <div class="check__box">
-          <input type="checkbox" id="checkbox">
-          <label class="lbl_right" for="checkbox">Я даю согласие на обработку персональных данных</label>
+          <input type="checkbox" id="checkbox" />
+          <label class="lbl_right" for="checkbox"
+            >Я даю согласие на обработку персональных данных</label
+          >
         </div>
         <div class="button__form">
-          <button class="btn" type="submit" value="Отправка формы">Оставить заявку</button>
+          <button class="btn" type="submit" value="Отправка формы">
+            Оставить заявку
+          </button>
         </div>
       </fieldset>
     </form>
-
   </div>
 </template>
 
@@ -38,7 +54,7 @@
   width: 100%;
   height: 95%;
   min-height: 550px;
-  background-color: #F0ECE3;
+  background-color: #f0ece3;
   padding: 15px 30px;
   margin: 2050px auto;
 
@@ -55,8 +71,8 @@
   input[type="checkbox"] {
     width: 25px;
     height: 25px;
-    color: #C4B192;
-    background: #C4B192;
+    color: #c4b192;
+    background: #c4b192;
   }
 
   input[type="text"],
@@ -86,9 +102,8 @@
       align-items: center;
       width: 100%;
       max-width: 450px;
-      border-bottom: 1px solid #4B4A50;
+      border-bottom: 1px solid #4b4a50;
     }
-
   }
 
   .form__legend {
@@ -107,21 +122,21 @@
     justify-content: center;
 
     .btn {
-      border: 1px solid #CCBB9E;
+      border: 1px solid #ccbb9e;
       background: transparent;
       padding: 12px 50px;
       margin-top: 30px;
-      color: #4B4A50;
+      color: #4b4a50;
       font-size: 1rem;
       font-weight: bold;
       text-transform: uppercase;
       cursor: pointer;
       appearance: none;
-      transition: .3s;
+      transition: 0.3s;
 
       &:hover {
         background: rgba(215, 174, 122, 0.58);
-        transition: .3s;
+        transition: 0.3s;
       }
     }
   }
@@ -147,16 +162,16 @@
 
 <script>
 export default {
-  name: 'Contact',
+  name: "Contact",
   methods: {
     // submit form handler
-    submit: function() {
+    submit: function () {
       this.submitted = true;
     },
     // check or uncheck all
-    checkAll: function(event) {
+    checkAll: function (event) {
       this.selection.features = event.target.checked ? this.features : [];
-    }
-  }
-}
+    },
+  },
+};
 </script>

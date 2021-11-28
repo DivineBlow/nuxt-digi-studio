@@ -9,7 +9,7 @@
 <script>
 export default {
   head: {
-    title: 'Сотрудничество'
-  }
-}
+    title: "Сотрудничество",
+  },
+};
 </script>

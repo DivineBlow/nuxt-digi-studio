@@ -3,23 +3,35 @@
     <Loading v-if="$fetchState.pending" />
     <p v-else-if="$fetchState.error">Хмм...Я сам не понял!</p>
     <vue-horizontal-list v-else :items="posts" :options="options">
-        <template v-slot:nav-prev>
-          <img class="svg__arrow" src="~/assets/img/arrow-left.svg" alt="LeftArrow">
-        </template>
+      <template v-slot:nav-prev>
+        <img
+          class="svg__arrow"
+          src="~/assets/img/arrow-left.svg"
+          alt="LeftArrow"
+        />
+      </template>
 
-        <template v-slot:nav-next>
-          <img class="svg__arrow" src="~/assets/img/arrow-right.svg" alt="RightArrow">
-        </template>
-        <template v-slot:default="posts">
-          <ul class="project__list">
-            <img class="slide__img" src="~/assets/img/post_img.png" />
-            <p>Архитектура <span>300 m<sup>2</sup></span></p>
-            <NuxtLink v-for="(post, id) in posts" :key="id"
-              :to="{ name: 'posts-id', params: { id: post.id } }"
-            >
-              {{ post.title }}
-            </NuxtLink>
-          </ul>
+      <template v-slot:nav-next>
+        <img
+          class="svg__arrow"
+          src="~/assets/img/arrow-right.svg"
+          alt="RightArrow"
+        />
+      </template>
+      <template v-slot:default="posts">
+        <ul class="project__list">
+          <img class="slide__img" src="~/assets/img/post_img.png" />
+          <p>
+            Архитектура <span>300 m<sup>2</sup></span>
+          </p>
+          <NuxtLink
+            v-for="(post, id) in posts"
+            :key="id"
+            :to="{ name: 'posts-id', params: { id: post.id } }"
+          >
+            {{ post.title }}
+          </NuxtLink>
+        </ul>
       </template>
     </vue-horizontal-list>
   </div>
@@ -30,7 +42,7 @@ import Vue from "vue";
 import VueHorizontalList from "vue-horizontal-list/src/vue-horizontal-list.vue";
 
 export default Vue.extend({
-  name: 'SlidePosts',
+  name: "SlidePosts",
   components: {
     VueHorizontalList,
   },
@@ -53,25 +65,26 @@ export default Vue.extend({
           padding: 50,
         },
         position: {
-        // Start from '1' on mounted.
-        start: 2,
-      },
+          // Start from '1' on mounted.
+          start: 2,
+        },
         autoplay: { play: true, repeat: true, speed: 5500 },
       },
-    }
+    };
   },
 
   activated() {
     if (this.$fetchState.timestamp <= Date.now() - 30000) {
-      this.$fetch()
+      this.$fetch();
     }
   },
 
   async fetch() {
-    this.posts = await this.$http.$get('https://jsonplaceholder.typicode.com/posts')
-  }
+    this.posts = await this.$http.$get(
+      "https://jsonplaceholder.typicode.com/posts"
+    );
+  },
 });
-
 </script>
 <style lang="scss">
 .vue-horizontal-list {
@@ -90,8 +103,8 @@ export default Vue.extend({
     height: 50px;
     display: flex;
     align-items: center;
-    box-shadow: none;
-    background: transparent;
+    box-shadow: none !important;
+    background: transparent !important;
     border-radius: none;
     z-index: 2;
 
@@ -102,12 +115,12 @@ export default Vue.extend({
 
   .vhl-btn-right {
     margin-left: auto;
-    margin-right: -100px;
+    margin-right: -100px !important;
   }
 
   .vhl-btn-left {
     margin-right: auto;
-    margin-left: -100px;
+    margin-left: -100px !important;
   }
 
   .svg__arrow {
@@ -132,7 +145,8 @@ export default Vue.extend({
     margin: 60px auto;
   }
 
-  p, a {
+  p,
+  a {
     align-self: flex-start;
     padding-bottom: 20px;
     text-align: left;
@@ -145,10 +159,10 @@ export default Vue.extend({
     letter-spacing: 2px;
     text-transform: uppercase;
     color: #131217;
-    font-size: .8rem;
+    font-size: 0.8rem;
 
     span {
-      color: #BF9C62;
+      color: #bf9c62;
     }
   }
 
@@ -165,7 +179,7 @@ export default Vue.extend({
     }
 
     &:visited {
-      color: #BF9C62;
+      color: #bf9c62;
     }
   }
 }
