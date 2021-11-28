@@ -118,4 +118,10 @@ $span-color: #000;
     font-weight: normal;
   }
 }
+
+@media (max-width: 424.99px) {
+  #logo__nav {
+    display: none;
+  }
+}
 </style>

@@ -19,6 +19,11 @@
       <nav class="menu">
         <div class="menu__item menu__item--1" data-direction="tb">
           <div class="menu__item-inner">
+            <img
+              class="logo__menu"
+              src="~/assets/img/logo.svg"
+              alt="MenuLogo"
+            />
             <div class="mainmenu">
               <NuxtLink to="/">О компании</NuxtLink>
               <NuxtLink to="/projects">Архитектура</NuxtLink>
@@ -282,6 +287,16 @@ main {
   grid-template-columns: 100%;
   grid-template-rows: 100%;
   pointer-events: none;
+
+  .logo__menu {
+    display: none;
+    width: 70vw;
+    position: absolute;
+    top: 15vh;
+    left: 15vw;
+    border-bottom: 1px solid rgba(20, 18, 21, 0.2);
+    padding-bottom: 10px;
+  }
 }
 
 .menu--open {
@@ -454,12 +469,16 @@ main {
   }
 }
 @media screen and (min-width: 320px) and (max-width: 767.99px) {
+  .logo__menu {
+    display: block !important;
+  }
+
   .action--menu {
-    right: 4rem;
+    right: 3rem;
   }
 
   .action--close {
-    right: 4.2rem;
+    right: 3.2rem;
   }
 }
 </style>

@@ -24,7 +24,7 @@
           <p>
             Архитектура <span>300 m<sup>2</sup></span>
           </p>
-          <NuxtLink
+          <NuxtLink class="item"
             v-for="(post, id) in posts"
             :key="id"
             :to="{ name: 'posts-id', params: { id: post.id } }"
@@ -51,22 +51,17 @@ export default Vue.extend({
       posts: [],
 
       options: {
-        responsive: [
-          { end: 576, size: 1 },
-          { start: 576, end: 768, size: 1 },
-          { start: 768, end: 992, size: 1 },
-          { size: 1 },
-        ],
+        responsive: [{ size: 1 }],
         list: {
           // 1200 because @media (min-width: 1200px) and therefore I want to switch to windowed mode
           windowed: 1200,
 
           // Because: #app {padding: 80px 24px;}
-          padding: 50,
+          padding: 24,
         },
         position: {
           // Start from '1' on mounted.
-          start: 2,
+          start: 1,
         },
         autoplay: { play: true, repeat: true, speed: 5500 },
       },
@@ -87,6 +82,10 @@ export default Vue.extend({
 });
 </script>
 <style lang="scss">
+.item {
+  padding: 24px;
+}
+
 .vue-horizontal-list {
   position: relative;
   margin: 0 auto;
