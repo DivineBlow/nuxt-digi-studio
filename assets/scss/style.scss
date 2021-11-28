@@ -1,0 +1,123 @@
+$bg-color: #F7F5F1;
+$primary-color: #131217;
+$color-hover: #f4af37;
+
+:root {
+  font-size: 16px;
+}
+
+html,
+body {
+  width: 100%;
+  height: 100vh;
+  font-family: 'Cormorant Garamond', serif;
+  scroll-behavior: smooth;
+  overflow-x: hidden;
+}
+
+body::-webkit-scrollbar {
+  width: 0.25em;
+}
+body::-webkit-scrollbar-track {
+  background: #263040;
+}
+body::-webkit-scrollbar-thumb {
+  border-radius: 20px;
+  background: #f4af37;
+}
+body::-webkit-scrollbar-corner {
+  background: transparent;
+}
+
+main {
+  text-align: center;
+}
+
+ul {
+  list-style-type: none;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  flex-direction: column;
+
+  li {
+    margin: 0 0.5rem;
+    padding: 0.25rem;
+    font-size: 1.2rem;
+  }
+}
+
+h6 {
+  margin-top: 100px;
+  text-transform: uppercase;
+  font-size: 3rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  flex-wrap: wrap;
+
+  &::after {
+    content: "";
+    background: rgba(215, 174, 122, 0.58);
+    width: 120px;
+    height: 3px;
+  }
+}
+
+#sticky__nav {
+  width: 100%;
+  overflow: hidden;
+  background-color: #fff;
+  transition: .5s;
+  z-index: 10;
+
+  .menu__nav a {
+    color: #131217;
+  }
+
+  .menu__nav a {
+    text-decoration: none;
+  }
+
+  .menu__nav a:hover {
+    color: #f4af37;
+  }
+
+  a.nuxt-link-exact-active.nuxt-link-active {
+    color: #f4af37;
+  }
+
+  .number {
+    color: #BF9C62;
+  }
+}
+
+.sticky {
+  position: fixed;
+  top: 0;
+}
+
+.sticky + .content {
+  padding-top: 60px;
+}
+
+.action--menu {
+  display: none;
+}
+
+@media (max-width: 1200px) {
+  .menu__nav {
+    display: none;
+  }
+
+  .action--menu {
+    display: block;
+  }
+}
+
+@media (max-width: 768px) {
+  .number {
+    display: none;
+  }
+}
