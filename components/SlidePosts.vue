@@ -19,8 +19,8 @@
         />
       </template>
       <template v-slot:default="posts">
-        <ul class="project__list">
-          <img class="slide__img" src="~/assets/img/post_img.png" />
+        <div class="project__list">
+          <img class="slide__img" src="~/assets/img/post_img.png" alt="ImageForSlidePosts" />
           <p>
             Архитектура <span>300 m<sup>2</sup></span>
           </p>
@@ -31,7 +31,7 @@
           >
             {{ post.title }}
           </NuxtLink>
-        </ul>
+        </div>
       </template>
     </vue-horizontal-list>
   </div>

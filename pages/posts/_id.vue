@@ -10,7 +10,7 @@
     <section>
       <p class="body__id">{{ posts.body }}</p>
     </section>
-    <img class="project__img" src="~/assets/img/post_img.png" />
+    <img class="project__img" src="~/assets/img/post_img.png" alt="SlideImage"/>
   </article>
 </template>
 
@@ -51,6 +51,7 @@ export default {
   flex-direction: column;
   align-items: stretch;
   margin: 0 auto;
+  padding: 100px 0;
 
   .button__id {
     align-self: center;

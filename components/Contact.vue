@@ -29,13 +29,16 @@
           </div>
         </div>
         <div class="check__box">
+
+          <label class="cont__check" for="checkbox">
+            Я даю согласие на обработку <span class="underline">персональных данных</span>
           <input type="checkbox" id="checkbox" />
-          <label class="lbl_right" for="checkbox"
-            >Я даю согласие на обработку персональных данных</label
-          >
+          <span class="checkmark"></span>
+          </label>
+          <!-- <p class="lbl_right">Я даю согласие на обработку персональных данных</p> -->
         </div>
         <div class="button__form">
-          <button class="btn" type="submit" value="Отправка формы">
+          <button class="btn" type="submit" value="Отправка формы" aria-label="SendButton">
             Оставить заявку
           </button>
         </div>
@@ -149,6 +152,65 @@
 
     .lbl_right {
       margin-left: 20px;
+    }
+
+    // Custom Chekbox
+    .cont__check {
+      user-select: none;
+      display: block;
+      position: relative;
+      padding-left: 35px;
+      margin-bottom: 12px;
+      color: #818181;
+      cursor: pointer;
+
+      .underline {
+        text-decoration: underline;
+      }
+
+      input {
+        position: absolute;
+        opacity: 0;
+        cursor: pointer;
+        height: 0;
+        width: 0;
+      }
+    }
+    .checkmark {
+      position: absolute;
+      top: -3px;
+      left: 0;
+      height: 25px;
+      width: 25px;
+      background-color: #c4b192;
+
+      &:after {
+        content: "";
+        position: absolute;
+        display: none;
+      }
+    }
+
+    .cont__check:hover input ~ .checkmark {
+      background-color: #ccc;
+    }
+
+    .cont__check input:checked ~ .checkmark {
+      background-color: #C4B192;;
+    }
+
+    .cont__check input:checked ~ .checkmark:after {
+      display: block;
+    }
+
+    .cont__check .checkmark:after {
+      left: 10px;
+      top: 5px;
+      width: 5px;
+      height: 10px;
+      border: solid #fff;
+      border-width: 0 1px 1px 0;
+      transform: rotate(45deg);
     }
   }
 }

@@ -39,10 +39,10 @@
           </div>
         </div>
 
-        <button class="action action--menu">
+        <button class="action action--menu" aria-label="OpenMenuButton">
           <svg class="icon icon--menu"><use xlink:href="#icon-menu"></use></svg>
         </button>
-        <button class="action action--close">
+        <button class="action action--close" aria-label="CloseMenuButton">
           <svg class="icon icon--close">
             <use xlink:href="#icon-close"></use>
           </svg>
