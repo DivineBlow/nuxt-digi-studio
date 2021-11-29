@@ -472,13 +472,5 @@ main {
   .logo__menu {
     display: block !important;
   }
-
-  .action--menu {
-    right: 3rem;
-  }
-
-  .action--close {
-    right: 3.2rem;
-  }
 }
 </style>

@@ -24,7 +24,7 @@
           <p>
             Архитектура <span>300 m<sup>2</sup></span>
           </p>
-          <NuxtLink class="item"
+          <NuxtLink
             v-for="(post, id) in posts"
             :key="id"
             :to="{ name: 'posts-id', params: { id: post.id } }"
@@ -82,9 +82,6 @@ export default Vue.extend({
 });
 </script>
 <style lang="scss">
-.item {
-  padding: 24px;
-}
 
 .vue-horizontal-list {
   position: relative;
