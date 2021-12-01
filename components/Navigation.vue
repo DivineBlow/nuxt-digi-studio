@@ -106,6 +106,7 @@ $span-color: #000;
 
 #sticky__nav {
   width: 100%;
+  background: #fff;
   overflow: hidden;
   transition: 0.5s;
   z-index: 10;
