@@ -622,7 +622,7 @@ main {
     opacity: 1;
   }
 }
-@media screen and (min-width: 420px) and (max-width: 767.99px) {
+@media screen and (min-width: 380px) and (max-width: 767.99px) {
   .mobile__menu--1 {
     visibility: visible !important;
   }

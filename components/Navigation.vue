@@ -206,6 +206,7 @@ $span-color: #000;
 
       path {
         stroke: #b1afa9;
+        fill: #b1afa9;
       }
     }
 
