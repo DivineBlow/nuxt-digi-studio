@@ -219,6 +219,15 @@ export default Vue.extend({
 
 @media (max-width: 1799.99px) {
   .vue-horizontal-list {
+
+    .vhl-btn-right {
+      margin-right: 45px !important;
+    }
+
+    .vhl-btn-left {
+      margin-left: 45px !important;
+    }
+
     .left__prev {
       display: none;
     }
@@ -229,14 +238,37 @@ export default Vue.extend({
   }
 }
 
+@media (max-width: 1799.99px) {
+  .vue-horizontal-list {
+
+    .project__list .slide__img {
+      max-width: 1000px;
+    }
+
+    .vhl-btn-right {
+      position: absolute;
+      margin-right: 0px !important;
+      right: 40px;
+      top: 45%;
+    }
+
+    .vhl-btn-left {
+      position: absolute;
+      margin-left: 0px !important;
+      left: 40px;
+      top: 45%;
+    }
+  }
+}
+
 @media (min-width: 1440px) and (max-width: 1799px) {
   .project__list {
     p {
-      margin-left: 6vw;
+      margin-left: 20vw;
     }
 
     .link--posts {
-      margin-left: 6vw;
+      margin-left: 20vw;
     }
   }
 }
