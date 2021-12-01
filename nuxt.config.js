@@ -15,16 +15,29 @@ export default {
     link: [
       { rel: "icon", type: "image/x-icon", href: "/favicon.ico" },
       {
-        rel: "stylesheet",
-        href: "https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,700&display=swap",
+        rel: "preconnect",
+        href: "https://fonts.googleapis.com"
       },
+      {
+        rel: "preconnect",
+        href: "https://fonts.gstatic.com",
+        crossorigin: true
+      },
+      {
+        rel: "stylesheet",
+        href: "https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,700&family=PT+Sans&family=Roboto:wght@300;400;500&display=swap"
+      }
     ],
     script: [
       {
         src: "/js/TweenMax.min.js",
         body: true,
-        async: true,
+        async: true
       },
+      {
+        src: "/js/main.js",
+        async: true
+      }
     ],
   },
   generate: {
@@ -37,6 +50,14 @@ export default {
     "~/assets/scss/style.scss",
     "~/assets/scss/responsive.scss",
   ],
+
+  render: {
+    bundleRenderer: {
+      shouldPreload: (file, type) => {
+        return ['script', 'style', 'font'].includes(type)
+      }
+    }
+  },
 
   // Plugins to run before rendering page: https://go.nuxtjs.dev/config-plugins
   plugins: [],

@@ -1,7 +1,7 @@
 <template>
   <div>
     <main>
-      <h6>Дизайн-интерьера</h6>
+      <p class="main--header">Дизайн Интерьера</p>
     </main>
   </div>
 </template>

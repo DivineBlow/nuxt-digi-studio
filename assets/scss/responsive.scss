@@ -10,27 +10,8 @@
 }
 
 @media screen and (min-width: 320px) and (max-width: 767.99px) {
-  h6 {
+  .main--header {
     font-size: 10vw;
-  }
-
-  .project__container {
-    h1 {
-      font-size: 2rem !important;
-    }
-  }
-
-  .project__list {
-    margin-left: 3rem;
-
-    p,
-    a {
-      align-self: center;
-    }
-  }
-
-  .slide__img {
-    width: 60vw;
   }
 
   .box__field {

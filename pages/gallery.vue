@@ -1,7 +1,7 @@
 <template>
   <div>
     <main>
-      <h6>Галерея</h6>
+      <p class="main--header">Галлерея</p>
     </main>
   </div>
 </template>

@@ -1,7 +1,7 @@
 <template>
   <div>
     <main>
-      <h6>Сотрудничество</h6>
+      <p class="main--header">Сотрудничество</p>
     </main>
   </div>
 </template>

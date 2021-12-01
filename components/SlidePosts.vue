@@ -4,27 +4,39 @@
     <p v-else-if="$fetchState.error">Хмм...Я сам не понял!</p>
     <vue-horizontal-list v-else :items="posts" :options="options">
       <template v-slot:nav-prev>
+        <div class="left__prev">
+          <img src="~/assets/img/left-slide.jpg" alt="LeftSlide" />
+        </div>
         <img
-          class="svg__arrow"
+          class="svg__arrow left"
           src="~/assets/img/arrow-left.svg"
           alt="LeftArrow"
         />
       </template>
 
       <template v-slot:nav-next>
+        <div class="right__prev">
+          <img src="~/assets/img/right-slide.jpg" alt="LeftSlide" />
+        </div>
         <img
-          class="svg__arrow"
+          class="svg__arrow right"
           src="~/assets/img/arrow-right.svg"
           alt="RightArrow"
         />
       </template>
+
       <template v-slot:default="posts">
         <div class="project__list">
-          <img class="slide__img" src="~/assets/img/post_img.png" alt="ImageForSlidePosts" />
+          <img
+            class="slide__img"
+            src="~/assets/img/post_img.png"
+            alt="PostsSlideImage"
+          />
           <p>
             Архитектура <span>300 m<sup>2</sup></span>
           </p>
           <NuxtLink
+            class="link--posts"
             v-for="(post, id) in posts"
             :key="id"
             :to="{ name: 'posts-id', params: { id: post.id } }"
@@ -63,7 +75,7 @@ export default Vue.extend({
           // Start from '1' on mounted.
           start: 1,
         },
-        autoplay: { play: true, repeat: true, speed: 5500 },
+        autoplay: { play: false, repeat: true, speed: 5500 },
       },
     };
   },
@@ -82,12 +94,10 @@ export default Vue.extend({
 });
 </script>
 <style lang="scss">
-
 .vue-horizontal-list {
-  position: relative;
   margin: 0 auto;
   width: 100%;
-  max-width: 1200px;
+  max-width: 1312, 44px;
 
   .vhl-item {
     margin-left: 35px;
@@ -95,8 +105,11 @@ export default Vue.extend({
 
   .vhl-btn-left,
   .vhl-btn-right {
-    width: 50px;
-    height: 50px;
+    width: 46px;
+    height: 29px;
+    position: relative;
+    top: -85px;
+    color: rgba(66, 75, 90, 0.6);
     display: flex;
     align-items: center;
     box-shadow: none !important;
@@ -111,16 +124,25 @@ export default Vue.extend({
 
   .vhl-btn-right {
     margin-left: auto;
-    margin-right: -100px !important;
+    margin-right: 305px !important;
   }
 
   .vhl-btn-left {
     margin-right: auto;
-    margin-left: -100px !important;
+    margin-left: 115px !important;
   }
 
-  .svg__arrow {
-    width: 70px;
+  .left__prev {
+    position: relative;
+    top: 25px;
+    left: -60px;
+    height: 777px;
+  }
+
+  .right__prev {
+    position: relative;
+    top: 25px;
+    right: -270px;
   }
 }
 
@@ -134,41 +156,56 @@ export default Vue.extend({
 
   .slide__img {
     width: 100%;
-    height: auto;
-    max-height: 777px;
-    background: rgba(228, 224, 216, 0.14);
+    max-width: 1312px;
+    height: 777px;
+    background: linear-gradient(
+      0deg,
+      rgba(228, 224, 216, 0.14),
+      rgba(228, 224, 216, 0.14)
+    );
     background-blend-mode: color, normal;
-    margin: 60px auto;
+    margin: 60px auto 35px auto;
   }
 
   p,
-  a {
+  .link--posts {
+    text-transform: uppercase;
     align-self: flex-start;
-    padding-bottom: 20px;
-    text-align: left;
+    padding-bottom: 10px;
   }
 
-  p {
-    font-family: PT Sans;
+  p,
+  span {
+    font-family: "PT Sans", sans-serif;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 12px;
     line-height: 15px;
     text-align: center;
     letter-spacing: 2px;
-    text-transform: uppercase;
     color: #131217;
-    font-size: 0.8rem;
 
     span {
+      font-weight: bold;
       color: #bf9c62;
     }
   }
 
-  a {
-    color: #131217;
-    font-size: 2rem;
-    line-height: 30px;
+  p {
+    margin-left: 16vw;
+  }
+
+  .link--posts {
+    font-family: "Cormorant Garamond", serif;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 42px;
+    line-height: 51px;
     letter-spacing: 2px;
-    text-transform: capitalize;
     text-decoration: none;
+    text-align: left;
+    color: #131217;
+    margin-left: 16vw;
 
     &:hover {
       color: #f4b470;
@@ -176,6 +213,78 @@ export default Vue.extend({
 
     &:visited {
       color: #bf9c62;
+    }
+  }
+}
+
+@media (max-width: 1799.99px) {
+  .vue-horizontal-list {
+    .left__prev {
+      display: none;
+    }
+
+    .right__prev {
+      display: none;
+    }
+  }
+}
+
+@media (min-width: 1440px) and (max-width: 1799px) {
+  .project__list {
+    p {
+      margin-left: 6vw;
+    }
+
+    .link--posts {
+      margin-left: 6vw;
+    }
+  }
+}
+
+@media (min-width: 768px) and (max-width: 1439.99px) {
+  .project__list {
+    p {
+      margin-left: 1vw;
+    }
+
+    .link--posts {
+      margin-left: 1vw;
+    }
+  }
+}
+
+@media screen and (min-width: 320px) and (max-width: 767.99px) {
+  .vue-horizontal-list {
+    .vhl-item {
+      margin-left: 0px;
+    }
+  }
+
+  .project__list {
+    margin-left: 13vw;
+
+    .slide__img {
+      width: 100%;
+      height: auto;
+      margin-top: 33px;
+    }
+
+    p {
+      align-self: center;
+      margin-left: 0px;
+      font-size: 10px;
+      line-height: 13px;
+      letter-spacing: 2px;
+    }
+
+    .link--posts {
+      width: 100%;
+      margin-left: 0px;
+      align-self: center;
+      text-align: center;
+      font-size: 24px;
+      line-height: 29px;
+      letter-spacing: 2px;
     }
   }
 }

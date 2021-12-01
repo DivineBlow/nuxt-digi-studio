@@ -1,7 +1,7 @@
 <template>
   <div>
     <main>
-      <h6>Архитектура</h6>
+      <p class="main--header">Архитектура</p>
       <SlidePosts />
     </main>
   </div>

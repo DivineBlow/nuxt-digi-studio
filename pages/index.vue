@@ -62,15 +62,12 @@ export default {
 }
 
 .bg__img {
-  background-image: url("~/assets/img/bg-img.png");
+  background-image: url("~/assets/img/bg-img.jpg");
   width: 100%;
-  min-height: 870px;
+  height: auto;
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
-  position: absolute;
-  top: 0;
-  left: 0;
   z-index: -1;
 
   .header {
@@ -88,12 +85,15 @@ export default {
 
     h1,
     h2 {
-      color: #dbd8d1;
+      font-family: Cormorant Garamond;
       font-style: normal;
       font-weight: 600;
-      font-size: clamp(3rem, 3rem, 2.5rem);
+      font-size: 50.9091px;
       line-height: 62px;
+      text-align: center;
       letter-spacing: 12px;
+      text-transform: uppercase;
+      color: #dbd8d1;
     }
 
     h1 {
@@ -101,38 +101,49 @@ export default {
       flex-direction: column;
       align-items: center;
       flex-wrap: wrap;
+      margin: 30px 0 20px 0;
 
       &::after {
         content: "";
-        background: rgba(215, 174, 122, 0.58);
-        margin-top: 40px;
-        width: 100px;
+        background: #ccbb9e;
+        margin-top: 15px;
+        width: 99px;
         height: 1px;
       }
     }
 
+    h2 {
+      margin-top: 0px;
+    }
+
     h3 {
-      color: #fff;
-      font-family: Roboto;
+      font-family: "Roboto", sans-serif;
       font-style: normal;
       font-weight: 300;
-      font-size: clamp(1em, 2em, 1.5em);
+      font-size: 20px;
       line-height: 23px;
       letter-spacing: 4px;
+      text-transform: uppercase;
+      color: #ffffff;
+      text-shadow: 0px 4px 10px rgba(0, 0, 0, 0.5);
     }
   }
 }
 .project__container {
   width: 100%;
   height: 100%;
-  max-height: 1500px;
-  position: absolute;
-  margin-top: 850px;
 
   h1 {
-    margin-top: 100px;
+    margin-top: 115px;
+    font-family: "Cormorant Garamond", serif;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 38px;
+    line-height: 46px;
+    text-align: center;
+    letter-spacing: 2px;
     text-transform: uppercase;
-    font-size: 3rem;
+    color: #131217;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -143,14 +154,31 @@ export default {
       background: rgba(215, 174, 122, 0.58);
       width: 120px;
       height: 3px;
+      margin-top: 10px;
     }
   }
 }
 
 @media screen and (min-width: 320px) and (max-width: 767.99px) {
-  .header h1,
-  h2 {
-    font-size: 5vw !important;
+  .bg__img .header h3 {
+    font-size: 12px;
+    line-height: 14px;
+    text-shadow: 0px 4px 10px rgba(0, 0, 0, 0.5);
+  }
+
+  .bg__img .header h1,
+  .bg__img .header h2 {
+    font-size: 32px;
+    line-height: 39px;
+    letter-spacing: 1.5px;
+    color: #dbd8d1;
+  }
+
+  .project__container h1 {
+    font-size: 28px;
+    line-height: 34px;
+    letter-spacing: 2px;
+    margin-top: 97px;
   }
 }
 </style>
