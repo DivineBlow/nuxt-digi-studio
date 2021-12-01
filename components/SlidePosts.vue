@@ -75,7 +75,7 @@ export default Vue.extend({
           // Start from '1' on mounted.
           start: 1,
         },
-        autoplay: { play: false, repeat: true, speed: 5500 },
+        autoplay: { play: true, repeat: true, speed: 5500 },
       },
     };
   },
@@ -97,7 +97,7 @@ export default Vue.extend({
 .vue-horizontal-list {
   margin: 0 auto;
   width: 100%;
-  max-width: 1312, 44px;
+  overflow: hidden;
 
   .vhl-item {
     margin-left: 35px;
