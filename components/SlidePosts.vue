@@ -16,7 +16,7 @@
 
       <template v-slot:nav-next>
         <div class="right__prev">
-          <img src="~/assets/img/right-slide.jpg" alt="LeftSlide" />
+          <img src="~/assets/img/right-slide.jpg" height="788px" alt="LeftSlide" />
         </div>
         <img
           class="svg__arrow right"
@@ -65,14 +65,10 @@ export default Vue.extend({
       options: {
         responsive: [{ size: 1 }],
         list: {
-          // 1200 because @media (min-width: 1200px) and therefore I want to switch to windowed mode
-          windowed: 1200,
-
-          // Because: #app {padding: 80px 24px;}
+          windowed: 1400,
           padding: 24,
         },
         position: {
-          // Start from '1' on mounted.
           start: 1,
         },
         autoplay: { play: true, repeat: true, speed: 5500 },
@@ -116,6 +112,7 @@ export default Vue.extend({
     background: transparent !important;
     border-radius: none;
     z-index: 2;
+    transition: all 1s;
 
     &:hover {
       color: #f4b470;
@@ -134,14 +131,13 @@ export default Vue.extend({
 
   .left__prev {
     position: relative;
-    top: 25px;
+    top: 10px;
     left: -60px;
-    height: 777px;
   }
 
   .right__prev {
     position: relative;
-    top: 25px;
+    top: 14px;
     right: -270px;
   }
 }
@@ -164,7 +160,7 @@ export default Vue.extend({
       rgba(228, 224, 216, 0.14)
     );
     background-blend-mode: color, normal;
-    margin: 60px auto 35px auto;
+    margin: 0px auto 35px auto;
   }
 
   p,
